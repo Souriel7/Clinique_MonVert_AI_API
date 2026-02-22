@@ -45,7 +45,7 @@ def get_dashboard_stats():
     }
 
 # 4. Endpoint : Filtrer par département
-@app.get("/api/tickets/service/{service_name}")
+@app.get("/api/ai/tickets/service/{service_name}")
 def get_tickets_by_service(service_name: str):
     df_clean, tickets_db = charger_donnees_fraiches()
     
