@@ -17,10 +17,10 @@ try:
     with open("data/model/rf_model.pkl", "rb") as f:
         rf_model = pickle.load(f)
     model_loaded = True
-    print("✅ RF model loaded successfully")
+    print("RF model loaded successfully")
 except Exception as e:
     model_loaded = False
-    print(f"⚠️  RF model not found: {e}")
+    print(f"RF model not found: {e}")
 
 # ── Normalize text — same as pipeline.py ─────────────────────
 noise_phrases = [
@@ -71,7 +71,7 @@ def get_backlog():
     }
 
 # ── GET /api/ai/dashboard/stats ───────────────────────────────
-@app.get("/api/ai/dashboard/stats")
+@app.get("/api/ai/categories")
 def get_dashboard_stats():
     df_clean, _ = charger_donnees_fraiches()
     if df_clean.empty:
